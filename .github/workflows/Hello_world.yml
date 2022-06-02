@@ -39,9 +39,19 @@ jobs:
 
   hello-world-windows:
     name: Hello World Windows
-    needs: [hello-world-unbuntu]
+    # needs: [hello-world-unbuntu]
     runs-on: windows-latest
   
     steps:
       - name: Print Hello World Windows
         run: echo 'Hello World Windows'
+        
+  hello-world-macoS:
+    name: Hello World macos
+    needs: [hello-world-unbuntu,hello-world-windows]
+    runs-on: macos-latest
+    
+    steps:
+      - name: Print, Hello world MacOs
+        run: echo 'Hello world Macos'
+    
